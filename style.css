@@ -1,0 +1,236 @@
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg-light: lightblue;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+body {
+    background-color: #fdfdfd;
+    background-image: 
+        /* Increased opacity from 0.02 to 0.1 for brighter lines */
+        linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size: 30px 30px; /* Slightly larger grid looks cleaner */
+    background-attachment: fixed;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Fixed Navbar */
+.navbar { background: var(--white); padding: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { text-decoration: none; color: var(--primary); font-weight: 500; }
+.btn-contact { background: var(--accent); color: white !important; padding: 8px 15px; border-radius: 5px; }
+
+/* Hero Section - Fixed "Middle" Issue */
+.hero { padding: 100px 0; background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
+
+.hero-content { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; /* Pushes content to opposite ends */
+    gap: 40px; 
+}
+
+.hero-text { 
+    flex: 1.5; /* Gives text more room */
+    text-align: left;
+}
+
+.hero-img-container { 
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; /* Pushes the image to the far right */
+}
+
+.profile-pic { 
+    width: 320px; 
+    height: 320px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 8px solid var(--white); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.badge { background: #f1c40f; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+
+/* Skills restored */
+section { padding: 80px 0; width: 100%; display: block; clear: both; }
+.skills-section { background-color: var(--bg-light); }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.skill-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.icon-group { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+.icon-item { display: flex; flex-direction: column; align-items: center; width: 80px; text-align: center; }
+.icon-item i { font-size: 2rem; color: var(--accent); margin-bottom: 5px; }
+
+/* About & Education */
+.about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; margin-top: 40px; }
+.edu-item { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; padding: 15px; background: var(--bg-light); border-radius: 10px; }
+.edu-item img { width: 50px; height: 50px; object-fit: contain; }
+
+/* Certifications */
+.cert-link { display: flex; align-items: center; gap: 15px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; text-decoration: none; color: var(--primary); transition: 0.3s; background: white; margin-bottom: 10px; }
+.cert-link:hover { transform: translateX(5px); border-color: var(--accent); }
+.cert-link img { width: 35px; }
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    /* This creates 4 equal columns on desktop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    width: 100%;
+    margin-top: 40px;
+}
+.project-item { background: var(--white); padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.project-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+
+/* Buttons */
+.btn { padding: 12px 25px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 20px; transition: 0.3s; cursor: pointer; }
+.btn-primary { background: var(--primary); color: white; border: none; }
+.btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+.btn-outline:hover { background: var(--primary); color: white; }
+.btn i { margin-right: 8px; }
+
+/* Brand Colors for new tools */
+.fa-chart-bar { color: #f2c811; } /* Power BI Yellow */
+.fa-figma { color: #F24E1E; }     /* Figma Orange/Red */
+.fa-video { color: #9999ff; }     /* Adobe Premiere Purple */
+.fa-table { color: #a4373a; }     /* MS Access Red/Maroon */
+
+/* Brand colors for PHP and XAMPP */
+.fa-php { 
+    color: #777BB4; /* PHP Purple */
+}
+
+
+/* Ensure the grid handles the extra icons smoothly */
+.icon-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+
+.project-hint {
+    text-align: left;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: -10px; /* Pulls it closer to the title */
+    margin-bottom: 30px; /* Adds space before the cards */
+    font-style: italic;
+}
+
+/* Optional: Add an icon to the hint for better visibility */
+.project-hint::before {
+    content: "\f09b"; /* GitHub Icon code */
+    font-family: "Font Awesome 5 Brands";
+    margin-right: 8px;
+    color: var(--primary);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary); /* Uses your dark blue theme */
+    color: white;
+    padding: 60px 0 30px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.footer-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent); /* Turns blue on hover */
+    transform: translateY(-5px);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    width: 100%;
+}
+
+/* Makes the entire area of the project card clickable */
+.project-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;       /* Keeps the text color the same as before */
+    display: block;        /* Ensures the link fills the whole card */
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Adds a subtle lift effect when you hover over the clickable card */
+.project-item:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--accent);
+}
+
+/* Removes default link styling and keeps layout consistent */
+.project-card-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Ensures the inner item can fill the height */
+}
+
+/* Fixes the icon alignment issue */
+.project-item {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    width: 100%; /* Important: makes card fill the grid column */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 320px; /* Keeps all cards uniform height */
+}
+/* Subtle hover effect to show it is clickable */
+.project-card-wrapper:hover .project-item {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Responsive: 2 columns on tablets, 1 column on phones */
+@media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .projects-grid { grid-template-columns: 1fr; }
+}
